@@ -6,7 +6,7 @@ class Topic(models.Model):  # створюємо клас Topic, що наслі
     """Тема яку вивчає користувач"""
     text = models.CharField(max_length=200)  # елемент даних, що складається з символів або тексту
     # max_length=200 --> максимальна довжина
-    data_added = models.DateTimeField(auto_now_add=True)  # елемент даних де записано дату та час
+    date_added = models.DateTimeField(auto_now_add=True)  # елемент даних де записано дату та час
     # auto_now_add=True --> автоматично встановлює значення цього атрибуту в поточну дату та час
 
     def __str__(self):
@@ -21,7 +21,7 @@ class Entry(models.Model):  # Клас Entry(Допис)
     # ... ключ, або ID. Аргумент <on_delete=models.CASCADE> - означає, що, коли цю тему буде видалено...
     # ... django видалить всі дописи, пов'язані з нею. (це каскадне видалення - a cascading delete).
     text = models.TextField()  # Екземпляр класу TextField. Таке поле не має розумного ліміту.
-    data_added = models.DateTimeField(auto_now_add=True)  # Атрибут <data_added> (дата публікації) дозволяє...
+    date_added = models.DateTimeField(auto_now_add=True)  # Атрибут <data_added> (дата публікації) дозволяє...
     # ... впорядкувати та показувати дописи за часом їхнього створення і ставити timestamp на кожен допис.
 
     class Meta:  # Вкладаємо клас Meta в клас Entry. Клас Meta містить додаткову інформацію про керування...
